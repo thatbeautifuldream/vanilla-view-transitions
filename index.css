@@ -92,11 +92,11 @@ footer {
   }
 }
 ::view-transition-old(root) {
-  animation: fade-out-left 500ms ease-in forwards;
+  animation: fade-out-left 300ms ease-in forwards;
 }
 
 ::view-transition-new(root) {
-  animation: fade-in-right 500ms ease-out forwards;
+  animation: fade-in-right 300ms ease-out forwards;
 }
 
 @keyframes fade-out-left {
