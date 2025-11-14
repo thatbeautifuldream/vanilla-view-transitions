@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About View Transitions</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Demo</a>
+      <a href="/about.html" aria-current="page">How It Works</a>
+    </nav>
+    <main>
+      <h1>How It Works</h1>
+      <img
+        src="https://avatars.githubusercontent.com/u/28717686?v=4"
+        alt="Demo Profile"
+        class="profile"
+        style="view-transition-name: profile"
+      />
+      <div class="stack">
+        <h2 style="view-transition-name: heading">View Transitions Demo</h2>
+        <p>
+          This uses <strong>cross-document view transitions</strong> for MPAs
+          (multi-page applications). The API operates in three steps:
+        </p>
+        <ol>
+          <li>Browser captures snapshots of old and new states</li>
+          <li>DOM updates occur while rendering is suppressed</li>
+          <li>CSS animations power the visual transitions</li>
+        </ol>
+        <p>
+          Elements with the same <code>view-transition-name</code> (like the
+          profile image and heading) morph smoothly between pages. The rest of
+          the page content uses the default slide animation defined with
+          <code>::view-transition-old(root)</code> and
+          <code>::view-transition-new(root)</code>.
+        </p>
+        <a href="/" class="btn">Back to Demo</a>
+      </div>
+    </main>
+    <footer>
+      <p>Vanila View Transitions Demo</p>
+    </footer>
+  </body>
+</html>

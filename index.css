@@ -1,0 +1,121 @@
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+@import "https://unpkg.com/open-props/buttons.min.css";
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  place-items: start;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--surface-1);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+  font-weight: var(--font-weight-normal);
+  font-style: var(--font-style-normal);
+}
+
+main {
+  display: grid;
+  gap: var(--size-4);
+  padding: var(--size-fluid-4);
+}
+
+nav,
+footer {
+  display: flex;
+  gap: var(--size-6);
+  padding: var(--size-4);
+  background-color: var(--surface-2);
+  justify-content: center;
+  border-bottom: 1px solid var(--surface-3);
+  width: 100%;
+
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+  }
+}
+
+footer {
+  border-bottom: none;
+  border-top: 1px solid var(--surface-3);
+}
+
+.stack {
+  display: grid;
+  gap: var(--size-2);
+}
+
+.profile {
+  width: 200px;
+  height: 200px;
+}
+
+.card {
+  display: flex;
+  gap: var(--size-4);
+  padding: var(--size-4);
+  background-color: var(--surface-2);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--surface-3);
+
+  .profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 100vmax;
+    object-fit: cover;
+  }
+}
+
+[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-primary);
+}
+
+nav {
+  view-transition-name: nav;
+}
+
+footer {
+  view-transition-name: footer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+::view-transition-old(root) {
+  animation: fade-out-left 500ms ease-in forwards;
+}
+
+::view-transition-new(root) {
+  animation: fade-in-right 500ms ease-out forwards;
+}
+
+@keyframes fade-out-left {
+  from {
+    translate: 0 0;
+    filter: blur(0px);
+  }
+  to {
+    translate: -100vw 0;
+    filter: blur(3px);
+  }
+}
+@keyframes fade-in-right {
+  from {
+    translate: 100vw 0;
+    filter: blur(3px);
+  }
+  to {
+    translate: 0 0;
+    filter: blur(0px);
+  }
+}

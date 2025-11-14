@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Transitions API Demo</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" aria-current="page">Demo</a>
+      <a href="/about.html">How It Works</a>
+    </nav>
+    <main>
+      <h1>View Transitions API Demo</h1>
+      <p>
+        This demonstrates cross-document view transitions for multi-page
+        applications. The browser captures snapshots of the old and new page
+        states, then animates between them automatically when you navigate.
+      </p>
+      <div class="card">
+        <img
+          src="https://avatars.githubusercontent.com/u/28717686?v=4"
+          alt="Demo Profile"
+          class="profile"
+          style="view-transition-name: profile"
+        />
+        <div class="stack">
+          <h2 style="view-transition-name: heading">View Transitions Demo</h2>
+          <p>
+            Cross-document transitions activated with
+            <code>@view-transition { navigation: auto; }</code>
+            in CSS. Supported in Chrome 126+.
+          </p>
+          <a href="/about.html" class="btn">See Transitions</a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Vanila View Transitions Demo</p>
+    </footer>
+  </body>
+</html>
