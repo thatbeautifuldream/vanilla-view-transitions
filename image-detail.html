@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Detail</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/products.html">Products</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <main>
+      <div class="image-detail-container">
+        <img
+          src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&h=600&fit=crop"
+          alt="Abstract gradient"
+          class="detail-image"
+          style="view-transition-name: gallery-img-1"
+          id="detail-image"
+        />
+        <div class="detail-info">
+          <h1 style="view-transition-name: detail-title">Abstract Art</h1>
+          <p>
+            This image demonstrates the smooth expansion effect using view
+            transitions. The image morphs from its thumbnail size to full size,
+            maintaining visual continuity throughout the navigation.
+          </p>
+          <p>
+            The <code>view-transition-name</code> property creates a connection
+            between the thumbnail and this detail view, allowing the browser to
+            animate the transformation automatically.
+          </p>
+          <a href="/gallery.html" class="btn">Back to Gallery</a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Vanilla View Transitions Demo</p>
+    </footer>
+
+    <script>
+      // Update image based on URL parameter
+      const params = new URLSearchParams(window.location.search);
+      const imageId = params.get("id") || "1";
+
+      const imageMap = {
+        1: {
+          src: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&h=600&fit=crop",
+          alt: "Abstract gradient",
+          title: "Abstract Art 1",
+        },
+        2: {
+          src: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=800&h=600&fit=crop",
+          alt: "Colorful waves",
+          title: "Abstract Art 2",
+        },
+        3: {
+          src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop",
+          alt: "Geometric patterns",
+          title: "Abstract Art 3",
+        },
+        4: {
+          src: "https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800&h=600&fit=crop",
+          alt: "Fluid colors",
+          title: "Abstract Art 4",
+        },
+        5: {
+          src: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=600&fit=crop",
+          alt: "Digital art",
+          title: "Abstract Art 5",
+        },
+        6: {
+          src: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&h=600&fit=crop",
+          alt: "Modern design",
+          title: "Abstract Art 6",
+        },
+      };
+
+      const image = document.getElementById("detail-image");
+      const title = document.querySelector("h1");
+      const imageData = imageMap[imageId] || imageMap[1];
+
+      image.src = imageData.src;
+      image.alt = imageData.alt;
+      image.style.viewTransitionName = `gallery-img-${imageId}`;
+      title.textContent = imageData.title;
+      document.title = `${imageData.title} - Image Detail`;
+    </script>
+  </body>
+</html>

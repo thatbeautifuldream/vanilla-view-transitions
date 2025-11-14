@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - Dynamic Reordering Example</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/products.html" aria-current="page">Products</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <main>
+      <h1>Product Catalog</h1>
+      <p>
+        Filter products by category. Each product maintains its identity during
+        transitions using unique <code>view-transition-name</code> values.
+      </p>
+
+      <div class="filter-controls">
+        <a href="/products.html" class="filter-btn active-filter">All</a>
+        <a href="/products.html?category=electronics" class="filter-btn"
+          >Electronics</a
+        >
+        <a href="/products.html?category=books" class="filter-btn">Books</a>
+        <a href="/products.html?category=home" class="filter-btn">Home</a>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        <a href="/product-detail.html?id=1" class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop"
+            alt="Wireless Headphones"
+            style="view-transition-name: product-img-1"
+          />
+          <div class="product-info">
+            <h3 style="view-transition-name: product-title-1">
+              Wireless Headphones
+            </h3>
+            <p class="category">Electronics</p>
+            <p class="price">$199.99</p>
+          </div>
+        </a>
+
+        <a href="/product-detail.html?id=2" class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=300&fit=crop"
+            alt="Design Thinking Book"
+            style="view-transition-name: product-img-2"
+          />
+          <div class="product-info">
+            <h3 style="view-transition-name: product-title-2">
+              Design Thinking
+            </h3>
+            <p class="category">Books</p>
+            <p class="price">$29.99</p>
+          </div>
+        </a>
+
+        <a href="/product-detail.html?id=3" class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=300&fit=crop"
+            alt="Smart Watch"
+            style="view-transition-name: product-img-3"
+          />
+          <div class="product-info">
+            <h3 style="view-transition-name: product-title-3">Smart Watch</h3>
+            <p class="category">Electronics</p>
+            <p class="price">$349.99</p>
+          </div>
+        </a>
+
+        <a href="/product-detail.html?id=4" class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=300&h=300&fit=crop"
+            alt="JavaScript Guide"
+            style="view-transition-name: product-img-4"
+          />
+          <div class="product-info">
+            <h3 style="view-transition-name: product-title-4">
+              JavaScript Guide
+            </h3>
+            <p class="category">Books</p>
+            <p class="price">$39.99</p>
+          </div>
+        </a>
+
+        <a href="/product-detail.html?id=5" class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=300&h=300&fit=crop"
+            alt="Modern Lamp"
+            style="view-transition-name: product-img-5"
+          />
+          <div class="product-info">
+            <h3 style="view-transition-name: product-title-5">Modern Lamp</h3>
+            <p class="category">Home</p>
+            <p class="price">$89.99</p>
+          </div>
+        </a>
+
+        <a href="/product-detail.html?id=6" class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=300&fit=crop"
+            alt="Bluetooth Speaker"
+            style="view-transition-name: product-img-6"
+          />
+          <div class="product-info">
+            <h3 style="view-transition-name: product-title-6">
+              Bluetooth Speaker
+            </h3>
+            <p class="category">Electronics</p>
+            <p class="price">$129.99</p>
+          </div>
+        </a>
+
+        <a href="/product-detail.html?id=7" class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=300&fit=crop"
+            alt="CSS Secrets"
+            style="view-transition-name: product-img-7"
+          />
+          <div class="product-info">
+            <h3 style="view-transition-name: product-title-7">CSS Secrets</h3>
+            <p class="category">Books</p>
+            <p class="price">$34.99</p>
+          </div>
+        </a>
+
+        <a href="/product-detail.html?id=8" class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=300&h=300&fit=crop"
+            alt="Decorative Vase"
+            style="view-transition-name: product-img-8"
+          />
+          <div class="product-info">
+            <h3 style="view-transition-name: product-title-8">
+              Decorative Vase
+            </h3>
+            <p class="category">Home</p>
+            <p class="price">$59.99</p>
+          </div>
+        </a>
+      </div>
+    </main>
+    <footer>
+      <p>Vanilla View Transitions Demo</p>
+    </footer>
+
+    <script>
+      // Filter products based on URL parameter
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get("category");
+
+      const products = document.querySelectorAll(".product-card");
+      const filterButtons = document.querySelectorAll(".filter-btn");
+
+      // Update active filter button
+      filterButtons.forEach((btn) => {
+        const btnCategory = new URL(btn.href).searchParams.get("category");
+        if (
+          (category && btnCategory === category) ||
+          (!category && !btnCategory)
+        ) {
+          btn.classList.add("active-filter");
+          btn.setAttribute("aria-current", "page");
+        } else {
+          btn.classList.remove("active-filter");
+          btn.removeAttribute("aria-current");
+        }
+      });
+
+      // Filter products
+      if (category) {
+        products.forEach((product) => {
+          const productCategory = product
+            .querySelector(".category")
+            .textContent.toLowerCase();
+          if (productCategory !== category) {
+            product.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

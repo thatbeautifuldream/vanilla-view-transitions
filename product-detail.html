@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/products.html">Products</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <main>
+      <div class="product-detail-container">
+        <img
+          src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop"
+          alt="Wireless Headphones"
+          class="product-detail-image"
+          style="view-transition-name: product-img-1"
+          id="product-image"
+        />
+        <div class="product-detail-info">
+          <h1 style="view-transition-name: product-title-1" id="product-title">
+            Wireless Headphones
+          </h1>
+          <p class="product-price" id="product-price">$199.99</p>
+          <p class="product-category" id="product-category">Electronics</p>
+
+          <div class="product-description">
+            <h2>Description</h2>
+            <p id="product-description">
+              Premium wireless headphones with active noise cancellation, 30-hour
+              battery life, and superior sound quality. Perfect for music lovers
+              and professionals alike.
+            </p>
+
+            <h3>Features</h3>
+            <ul id="product-features">
+              <li>Active Noise Cancellation (ANC)</li>
+              <li>30-hour battery life</li>
+              <li>Bluetooth 5.0 connectivity</li>
+              <li>Comfortable over-ear design</li>
+              <li>Premium sound quality</li>
+            </ul>
+          </div>
+
+          <div class="product-actions">
+            <button class="btn btn-primary">Add to Cart</button>
+            <a href="/products.html" class="btn">Back to Products</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Vanilla View Transitions Demo</p>
+    </footer>
+
+    <script>
+      // Product data
+      const products = {
+        1: {
+          title: "Wireless Headphones",
+          price: "$199.99",
+          category: "Electronics",
+          image:
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop",
+          description:
+            "Premium wireless headphones with active noise cancellation, 30-hour battery life, and superior sound quality. Perfect for music lovers and professionals alike.",
+          features: [
+            "Active Noise Cancellation (ANC)",
+            "30-hour battery life",
+            "Bluetooth 5.0 connectivity",
+            "Comfortable over-ear design",
+            "Premium sound quality",
+          ],
+        },
+        2: {
+          title: "Design Thinking",
+          price: "$29.99",
+          category: "Books",
+          image:
+            "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&h=600&fit=crop",
+          description:
+            "A comprehensive guide to design thinking methodology. Learn how to approach problem-solving creatively and develop innovative solutions for complex challenges.",
+          features: [
+            "Step-by-step methodology",
+            "Real-world case studies",
+            "Practical exercises",
+            "Team collaboration techniques",
+            "Innovation frameworks",
+          ],
+        },
+        3: {
+          title: "Smart Watch",
+          price: "$349.99",
+          category: "Electronics",
+          image:
+            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=600&fit=crop",
+          description:
+            "Advanced smartwatch with fitness tracking, heart rate monitoring, GPS, and seamless smartphone integration. Stay connected and healthy with style.",
+          features: [
+            "Heart rate & SpO2 monitoring",
+            "Built-in GPS",
+            "Water resistant (50m)",
+            "7-day battery life",
+            "Sleep tracking",
+          ],
+        },
+        4: {
+          title: "JavaScript Guide",
+          price: "$39.99",
+          category: "Books",
+          image:
+            "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=600&fit=crop",
+          description:
+            "Master JavaScript from basics to advanced concepts. Covers ES6+, async programming, and modern development practices with hands-on examples.",
+          features: [
+            "ES6+ features coverage",
+            "Async/await patterns",
+            "DOM manipulation",
+            "Modern tooling",
+            "Best practices",
+          ],
+        },
+        5: {
+          title: "Modern Lamp",
+          price: "$89.99",
+          category: "Home",
+          image:
+            "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&h=600&fit=crop",
+          description:
+            "Elegant minimalist lamp with adjustable brightness and color temperature. Perfect for any modern living space or workspace.",
+          features: [
+            "Adjustable brightness",
+            "Color temperature control",
+            "Energy efficient LED",
+            "Minimalist design",
+            "Touch controls",
+          ],
+        },
+        6: {
+          title: "Bluetooth Speaker",
+          price: "$129.99",
+          category: "Electronics",
+          image:
+            "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=600&fit=crop",
+          description:
+            "Portable Bluetooth speaker with 360-degree sound, waterproof design, and 12-hour battery life. Perfect for outdoor adventures.",
+          features: [
+            "360-degree sound",
+            "IPX7 waterproof",
+            "12-hour battery",
+            "Portable design",
+            "Deep bass",
+          ],
+        },
+        7: {
+          title: "CSS Secrets",
+          price: "$34.99",
+          category: "Books",
+          image:
+            "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=600&h=600&fit=crop",
+          description:
+            "Discover advanced CSS techniques and lesser-known features. Learn to create stunning visual effects and solve common design challenges elegantly.",
+          features: [
+            "Advanced techniques",
+            "Visual effects",
+            "Layout patterns",
+            "Animation tips",
+            "Browser compatibility",
+          ],
+        },
+        8: {
+          title: "Decorative Vase",
+          price: "$59.99",
+          category: "Home",
+          image:
+            "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=600&h=600&fit=crop",
+          description:
+            "Handcrafted ceramic vase with unique geometric patterns. A beautiful centerpiece for any room, perfect for fresh or dried flowers.",
+          features: [
+            "Handcrafted ceramic",
+            "Unique patterns",
+            "Versatile design",
+            "Durable material",
+            "Easy to clean",
+          ],
+        },
+      };
+
+      // Get product ID from URL
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get("id") || "1";
+      const product = products[productId] || products[1];
+
+      // Update page content
+      document.getElementById("product-image").src = product.image;
+      document.getElementById("product-image").alt = product.title;
+      document
+        .getElementById("product-image")
+        .style.setProperty("view-transition-name", `product-img-${productId}`);
+
+      document.getElementById("product-title").textContent = product.title;
+      document
+        .getElementById("product-title")
+        .style.setProperty(
+          "view-transition-name",
+          `product-title-${productId}`
+        );
+
+      document.getElementById("product-price").textContent = product.price;
+      document.getElementById("product-category").textContent = product.category;
+      document.getElementById("product-description").textContent =
+        product.description;
+
+      // Update features list
+      const featuresList = document.getElementById("product-features");
+      featuresList.innerHTML = "";
+      product.features.forEach((feature) => {
+        const li = document.createElement("li");
+        li.textContent = feature;
+        featuresList.appendChild(li);
+      });
+
+      document.title = `${product.title} - Product Detail`;
+    </script>
+  </body>
+</html>

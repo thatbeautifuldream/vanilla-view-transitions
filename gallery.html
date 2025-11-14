@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Image Expansion Example</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/gallery.html" aria-current="page">Gallery</a>
+      <a href="/products.html">Products</a>
+      <a href="/about.html">About</a>
+    </nav>
+    <main>
+      <h1>Image Gallery</h1>
+      <p>
+        Click any image to see it expand. Each image has a unique
+        <code>view-transition-name</code> that creates a smooth morphing effect.
+      </p>
+
+      <div class="gallery-grid">
+        <a href="/image-detail.html?id=1" class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=400&h=400&fit=crop"
+            alt="Abstract gradient"
+            style="view-transition-name: gallery-img-1"
+          />
+          <p>Abstract Art 1</p>
+        </a>
+
+        <a href="/image-detail.html?id=2" class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=400&fit=crop"
+            alt="Colorful waves"
+            style="view-transition-name: gallery-img-2"
+          />
+          <p>Abstract Art 2</p>
+        </a>
+
+        <a href="/image-detail.html?id=3" class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=400&fit=crop"
+            alt="Geometric patterns"
+            style="view-transition-name: gallery-img-3"
+          />
+          <p>Abstract Art 3</p>
+        </a>
+
+        <a href="/image-detail.html?id=4" class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=400&h=400&fit=crop"
+            alt="Fluid colors"
+            style="view-transition-name: gallery-img-4"
+          />
+          <p>Abstract Art 4</p>
+        </a>
+
+        <a href="/image-detail.html?id=5" class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=400&fit=crop"
+            alt="Digital art"
+            style="view-transition-name: gallery-img-5"
+          />
+          <p>Abstract Art 5</p>
+        </a>
+
+        <a href="/image-detail.html?id=6" class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=400&h=400&fit=crop"
+            alt="Modern design"
+            style="view-transition-name: gallery-img-6"
+          />
+          <p>Abstract Art 6</p>
+        </a>
+      </div>
+    </main>
+    <footer>
+      <p>Vanilla View Transitions Demo</p>
+    </footer>
+  </body>
+</html>

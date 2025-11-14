@@ -8,36 +8,78 @@
   </head>
   <body>
     <nav>
-      <a href="/" aria-current="page">Demo</a>
-      <a href="/about.html">How It Works</a>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/products.html">Products</a>
+      <a href="/about.html">About</a>
     </nav>
     <main>
-      <h1>View Transitions API Demo</h1>
+      <h1>View Transitions API Showcase</h1>
       <p>
-        This demonstrates cross-document view transitions for multi-page
-        applications. The browser captures snapshots of the old and new page
-        states, then animates between them automatically when you navigate.
+        Explore different examples of the CSS View Transitions API in action.
+        This demonstration showcases cross-document transitions for multi-page
+        applications without any JavaScript framework overhead.
       </p>
-      <div class="card">
-        <img
-          src="https://avatars.githubusercontent.com/u/28717686?v=4"
-          alt="Demo Profile"
-          class="profile"
-          style="view-transition-name: profile"
-        />
-        <div class="stack">
-          <h2 style="view-transition-name: heading">View Transitions Demo</h2>
+
+      <div class="examples-grid">
+        <a href="/gallery.html" class="example-card">
+          <h3>Image Gallery</h3>
           <p>
-            Cross-document transitions activated with
-            <code>@view-transition { navigation: auto; }</code>
-            in CSS. Supported in Chrome 126+.
+            Click any thumbnail to see it smoothly expand into a full-size
+            image. Each image maintains its identity across pages using unique
+            <code>view-transition-name</code> properties.
           </p>
-          <a href="/about.html" class="btn">See Transitions</a>
-        </div>
+          <span class="btn">View Gallery</span>
+        </a>
+
+        <a href="/products.html" class="example-card">
+          <h3>Product Catalog</h3>
+          <p>
+            Browse products with dynamic filtering. Watch as product cards
+            transition smoothly when filtering by category, and expand into
+            detailed views when clicked.
+          </p>
+          <span class="btn">View Products</span>
+        </a>
+
+        <a href="/about.html" class="example-card">
+          <h3>How It Works</h3>
+          <p>
+            Learn about the View Transitions API and how it creates smooth
+            animations between page navigations using pure CSS.
+          </p>
+          <span class="btn">Learn More</span>
+        </a>
+      </div>
+
+      <div class="stack" style="margin-top: var(--size-8);">
+        <h2>Key Features</h2>
+        <ul>
+          <li>
+            <strong>Zero JavaScript</strong> - Transitions powered entirely by
+            CSS
+          </li>
+          <li>
+            <strong>Cross-Document</strong> - Smooth animations between separate
+            HTML pages
+          </li>
+          <li>
+            <strong>Named Transitions</strong> - Elements morph seamlessly with
+            matching <code>view-transition-name</code>
+          </li>
+          <li>
+            <strong>Accessibility</strong> - Respects
+            <code>prefers-reduced-motion</code> preferences
+          </li>
+          <li>
+            <strong>Browser Support</strong> - Chrome 126+, Edge 126+, Opera
+            112+
+          </li>
+        </ul>
       </div>
     </main>
     <footer>
-      <p>Vanila View Transitions Demo</p>
+      <p>Vanilla View Transitions Demo</p>
     </footer>
   </body>
 </html>
