@@ -120,36 +120,186 @@ footer {
     navigation: auto;
   }
 }
-::view-transition-old(root) {
-  animation: fade-out-left 300ms ease-in forwards;
-}
 
+::view-transition-old(root),
 ::view-transition-new(root) {
-  animation: fade-in-right 300ms ease-out forwards;
+  animation-duration: 0.3s;
 }
 
-@keyframes fade-out-left {
-  from {
-    translate: 0 0;
-    filter: blur(0px);
-  }
-  to {
-    translate: -100vw 0;
-    filter: blur(3px);
-  }
+::view-transition-old(gallery-img-1),
+::view-transition-old(gallery-img-2),
+::view-transition-old(gallery-img-3),
+::view-transition-old(gallery-img-4),
+::view-transition-old(gallery-img-5),
+::view-transition-old(gallery-img-6),
+::view-transition-new(gallery-img-1),
+::view-transition-new(gallery-img-2),
+::view-transition-new(gallery-img-3),
+::view-transition-new(gallery-img-4),
+::view-transition-new(gallery-img-5),
+::view-transition-new(gallery-img-6) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-@keyframes fade-in-right {
-  from {
-    translate: 100vw 0;
-    filter: blur(3px);
-  }
+
+::view-transition-old(product-img-1),
+::view-transition-old(product-img-2),
+::view-transition-old(product-img-3),
+::view-transition-old(product-img-4),
+::view-transition-old(product-img-5),
+::view-transition-old(product-img-6),
+::view-transition-old(product-img-7),
+::view-transition-old(product-img-8),
+::view-transition-new(product-img-1),
+::view-transition-new(product-img-2),
+::view-transition-new(product-img-3),
+::view-transition-new(product-img-4),
+::view-transition-new(product-img-5),
+::view-transition-new(product-img-6),
+::view-transition-new(product-img-7),
+::view-transition-new(product-img-8) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(product-title-1),
+::view-transition-old(product-title-2),
+::view-transition-old(product-title-3),
+::view-transition-old(product-title-4),
+::view-transition-old(product-title-5),
+::view-transition-old(product-title-6),
+::view-transition-old(product-title-7),
+::view-transition-old(product-title-8),
+::view-transition-new(product-title-1),
+::view-transition-new(product-title-2),
+::view-transition-new(product-title-3),
+::view-transition-new(product-title-4),
+::view-transition-new(product-title-5),
+::view-transition-new(product-title-6),
+::view-transition-new(product-title-7),
+::view-transition-new(product-title-8) {
+  animation-duration: 0.35s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(gallery-img-1):only-child,
+::view-transition-old(gallery-img-2):only-child,
+::view-transition-old(gallery-img-3):only-child,
+::view-transition-old(gallery-img-4):only-child,
+::view-transition-old(gallery-img-5):only-child,
+::view-transition-old(gallery-img-6):only-child {
+  animation: 0.25s ease-in both fade-out, 0.25s ease-in both scale-down;
+}
+
+::view-transition-new(gallery-img-1):only-child,
+::view-transition-new(gallery-img-2):only-child,
+::view-transition-new(gallery-img-3):only-child,
+::view-transition-new(gallery-img-4):only-child,
+::view-transition-new(gallery-img-5):only-child,
+::view-transition-new(gallery-img-6):only-child {
+  animation: 0.3s ease-out both fade-in, 0.3s ease-out both scale-up;
+}
+
+::view-transition-old(product-img-1):only-child,
+::view-transition-old(product-img-2):only-child,
+::view-transition-old(product-img-3):only-child,
+::view-transition-old(product-img-4):only-child,
+::view-transition-old(product-img-5):only-child,
+::view-transition-old(product-img-6):only-child,
+::view-transition-old(product-img-7):only-child,
+::view-transition-old(product-img-8):only-child {
+  animation: 0.25s ease-in both fade-out, 0.25s ease-in both scale-down;
+}
+
+::view-transition-new(product-img-1):only-child,
+::view-transition-new(product-img-2):only-child,
+::view-transition-new(product-img-3):only-child,
+::view-transition-new(product-img-4):only-child,
+::view-transition-new(product-img-5):only-child,
+::view-transition-new(product-img-6):only-child,
+::view-transition-new(product-img-7):only-child,
+::view-transition-new(product-img-8):only-child {
+  animation: 0.3s ease-out both fade-in, 0.3s ease-out both scale-up;
+}
+
+::view-transition-old(product-title-1):only-child,
+::view-transition-old(product-title-2):only-child,
+::view-transition-old(product-title-3):only-child,
+::view-transition-old(product-title-4):only-child,
+::view-transition-old(product-title-5):only-child,
+::view-transition-old(product-title-6):only-child,
+::view-transition-old(product-title-7):only-child,
+::view-transition-old(product-title-8):only-child {
+  animation: 0.2s ease-in both fade-out, 0.25s ease-in both slide-out-left;
+}
+
+::view-transition-new(product-title-1):only-child,
+::view-transition-new(product-title-2):only-child,
+::view-transition-new(product-title-3):only-child,
+::view-transition-new(product-title-4):only-child,
+::view-transition-new(product-title-5):only-child,
+::view-transition-new(product-title-6):only-child,
+::view-transition-new(product-title-7):only-child,
+::view-transition-new(product-title-8):only-child {
+  animation: 0.3s ease-out both fade-in, 0.3s ease-out both slide-in-right;
+}
+
+::view-transition-old(detail-title):only-child {
+  animation: 0.2s ease-in both fade-out, 0.25s ease-in both slide-out-down;
+}
+
+::view-transition-new(detail-title):only-child {
+  animation: 0.3s ease-out both fade-in, 0.3s ease-out both slide-in-up;
+}
+
+@keyframes fade-out {
   to {
-    translate: 0 0;
-    filter: blur(0px);
+    opacity: 0;
   }
 }
 
-/* Gallery Grid Styles */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes scale-down {
+  to {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes slide-out-left {
+  to {
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes slide-out-down {
+  to {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    transform: translateY(20px);
+  }
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -289,7 +439,6 @@ footer {
   }
 }
 
-/* Product Detail Styles */
 .product-detail-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
